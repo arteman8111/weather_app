@@ -1,10 +1,3 @@
-function notFound() {
-    return `<div class="not-found">
-        <img src="images/404.png" alt="">
-        <p>Not found 404</p>
-                </div>`
-}
-console.log(123)
 const container = document.querySelector('.container');
 const search = document.querySelector('.search-box button');
 const weatherBox = document.querySelector('.weather-box');
@@ -27,14 +20,10 @@ search.addEventListener('click', () => {
         .then(json => {
             if (json.cod === '404') {
                 container.style.height = '400px';
-                // weatherBox.style.display = 'none';
-                // weatherDetails.style.display = 'none';
-                // error404.style.display = 'block';
-                // error404.classList.add('fadeIn');
-                container.insertAdjacentHTML(position.end, `<div class="not-found">
-                <img src="images/404.png" alt="">
-                <p>Not found 404</p>
-                        </div>`)
+                weatherBox.style.display = 'none';
+                weatherDetails.style.display = 'none';
+                error404.style.display = 'block';
+                error404.classList.add('fadeIn');
                 return;
             }
 
